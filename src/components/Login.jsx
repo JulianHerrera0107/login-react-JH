@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export function Login({ setLogin }) {
+export function Login({ setUsuario }) {
     //State para capturar información
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
@@ -17,7 +17,7 @@ export function Login({ setLogin }) {
         }
         setError(false)
 
-        setLogin([user])
+        setUsuario([user, password])
 
     }
 
