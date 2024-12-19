@@ -17,7 +17,7 @@ export function Login({ setUsuario }) {
         }
         setError(false)
 
-        setUsuario([user, password])
+        setUsuario([user])
 
     }
 

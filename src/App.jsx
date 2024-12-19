@@ -10,7 +10,7 @@ export default function App() {
       {
         !usuario.length > 0
           ? <Login setUsuario={setUsuario} />
-          : <Home />
+          : <Home usuario={usuario} setUsuario={setUsuario}/>
       }
     </>
   )
