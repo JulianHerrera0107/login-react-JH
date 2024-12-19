@@ -7,18 +7,21 @@ export function Login(){
     const [password, setPassword] = useState("")
     //State para capturar el error
     const [error, setError] = useState(false)
+
     const handleSubmit = (e) => {
         e.preventDefault() //Previene refrescar la página
+        console.log(e)
         if(user === "" || password === ""){
             setError(true)
             return
         }
+
+        setError(false)
     }
 
     return (
         <>
-        <div className="wrapper"
-        onSubmit={handleSubmit}>
+        <div className="wrapper">
         <div className="container main">
             <div className="row">
                 <div className="col-md-6 side-image">
@@ -29,7 +32,8 @@ export function Login(){
                     </div>
                 </div>
                 <div className="col-md-6 right">
-                    <div className="input-box">
+                    <div className="input-box"
+                    onSubmit={handleSubmit}>
                         <header>Iniciar Sesion</header>
                         <div className="input-field">
                             <input type="text" className="input" 
@@ -38,7 +42,8 @@ export function Login(){
                             <label htmlFor="correo">Correo Electronico</label>
                         </div>
                         <div className="input-field">
-                            <input type="password" className="input" id="contraseña" required autoComplete="off" 
+                            <input type="password" className="input" 
+                            id="contraseña" required autoComplete="off" 
                             value={password} onChange={e => setPassword(e.target.value)} />
                             <label htmlFor="contraseña">Contraseña</label>
                         </div>
@@ -47,7 +52,7 @@ export function Login(){
                         </div>
                         <div className="signin">
                             <span>¿No tienes una cuenta? <a href="a">Registrate aquí</a></span>
-                            {error && <span>Todos los campos son obligatorios</span>}
+                            {error && <p>Todos los campos son obligatorios</p>}
                         </div>
                     </div>
                 </div>
