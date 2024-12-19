@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export function Login() {
+export function Login({ setLogin }) {
     //State para capturar información
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
@@ -10,12 +10,14 @@ export function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault() //Previene refrescar la página
-        console.log(e)
+        //console.log(e)
         if (user === "" || password === "") {
             setError(true)
             return
         }
         setError(false)
+
+        setLogin([user])
 
     }
 
